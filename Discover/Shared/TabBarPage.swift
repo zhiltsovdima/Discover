@@ -25,7 +25,7 @@ enum TabBarPage {
         case .news:
             return R.Images.news
         case .favorites:
-            return R.Images.favorites
+            return R.Images.favoritesFill
         }
     }
     

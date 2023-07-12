@@ -9,7 +9,7 @@ import Foundation
 
 enum APIEndpoints {
     
-    case news
+    case news(nextPage: String?)
     
     private var scheme: String {
         return "https"
@@ -29,12 +29,13 @@ enum APIEndpoints {
         }
     }
     
-    private var parameters: [String: String]? {
+    private var parameters: [String: String?] {
         switch self {
-        case .news:
+        case .news(let nextPage):
             return [
                 "apikey": PrivateKey.apiKey,
-                "language": "en,ru"
+                "language": "en,ru",
+                "page": nextPage
             ]
         }
     }

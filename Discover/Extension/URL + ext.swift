@@ -8,7 +8,7 @@
 import Foundation
 
 extension URL {
-    init?(scheme: String, host: String, path: String, parameters: [String: String]? = nil) {
+    init?(scheme: String, host: String, path: String, parameters: [String: String?]? = nil) {
         var components = URLComponents()
         components.scheme = scheme
         components.host = host

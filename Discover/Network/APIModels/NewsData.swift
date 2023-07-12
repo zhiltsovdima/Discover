@@ -9,6 +9,7 @@ import Foundation
 
 struct NewsData: Codable {
     let results: [ArticleData]
+    var nextPage: String?
 }
 
 struct ArticleData: Codable {
@@ -16,11 +17,12 @@ struct ArticleData: Codable {
     var link: String?
     var description: String?
     var content: String?
+    var category: [String]?
     var pubDate: String?
     var imageUrl: String?
     
     enum CodingKeys: String, CodingKey {
-        case title, link, description, content, pubDate
+        case title, link, description, content, category, pubDate
         case imageUrl = "image_url"
     }
     
@@ -30,6 +32,7 @@ struct ArticleData: Codable {
         self.link = try container.decodeIfPresent(String.self, forKey: .link)
         self.description = try container.decodeIfPresent(String.self, forKey: .description)
         self.content = try container.decodeIfPresent(String.self, forKey: .content)
+        self.category = try container.decodeIfPresent([String].self, forKey: .category)
         self.pubDate = try container.decodeIfPresent(String.self, forKey: .pubDate)
         self.imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl)
     }

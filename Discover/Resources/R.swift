@@ -13,7 +13,13 @@ enum R {
     
     enum Images {
         static let news = UIImage(systemName: "newspaper")!
-        static let favorites = UIImage(systemName: "star.fill")!
+        static let favoritesFill = UIImage(systemName: "star.fill")!
+        static let favorites = UIImage(systemName: "star")!
+        
+        static let arrowUp = UIImage(systemName: "arrow.up")!
+        
+        static let defaultImage = UIImage(named: "defaultNews")!
+        static let brokenImage = UIImage(named: "brokenImage")!
     }
     
     // MARK: - Strings
