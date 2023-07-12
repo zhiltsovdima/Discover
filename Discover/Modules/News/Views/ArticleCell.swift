@@ -35,7 +35,8 @@ final class ArticleCell: UITableViewCell {
 extension ArticleCell: ArticleCellProtocol {
     func setup(with article: Article) {
         title.text = article.title
-        dateLabel.text = article.date
+        dateLabel.text = article.dateString
+        articleImage.image = article.image
     }
 }
 
@@ -54,7 +55,6 @@ extension ArticleCell {
         verticalStack.axis = .vertical
         
         articleImage.contentMode = .scaleAspectFill
-        articleImage.backgroundColor = .purple
         articleImage.layer.cornerRadius = 20
         articleImage.clipsToBounds = true
         
