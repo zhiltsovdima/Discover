@@ -17,6 +17,7 @@ enum R {
         static let favorites = UIImage(systemName: "star")!
         
         static let arrowUp = UIImage(systemName: "arrow.up")!
+        static let arrowBack = UIImage(systemName: "arrow.backward")!
         
         static let defaultImage = UIImage(named: "defaultNews")!
         static let brokenImage = UIImage(named: "brokenImage")!

@@ -57,7 +57,6 @@ extension NewsViewController {
         view.backgroundColor = .systemBackground
         title = R.Strings.appTitle
         navigationController?.navigationBar.prefersLargeTitles = true
-        hidesBottomBarWhenPushed = true
     }
     
     private func setupViews() {

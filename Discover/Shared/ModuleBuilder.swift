@@ -38,5 +38,18 @@ final class ModuleBuilder: ModuleBuilderProtocol {
 
         return view
     }
+    
+    static func createDetailsModule(router: NewsRouterProtocol, newsService: NewsServiceProtocol, article: Article) -> UIViewController & ArticleDetailsViewProtocol {
+        let interactor = ArticleDetailsInteractor(newsService: newsService)
+        let presenter = ArticleDetailsPresenter(router: router,article: article)
+        let view = ArticleDetailsController()
+
+        interactor.presenter = presenter
+        presenter.interactor = interactor
+        presenter.view = view
+        view.presenter = presenter
+
+        return view
+    }
 }
 

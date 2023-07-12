@@ -37,7 +37,7 @@ final class AppRouter: AppRouterProtocol {
         )
         switch page {
         case .news:
-            let newsRouter = NewsRouter(navigationController)
+            let newsRouter = NewsRouter(navigationController, newsService)
             let controller = ModuleBuilder.createNewsModule(router: newsRouter, newsService: newsService)
             navigationController.setViewControllers([controller], animated: false)
         case .favorites:
