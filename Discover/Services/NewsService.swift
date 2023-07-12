@@ -8,7 +8,8 @@
 import UIKit
 
 protocol NewsServiceProtocol: AnyObject {
-    func getNews(completion: @escaping (Result<NewsData, Error>) -> Void)
+    func loadNews(nextPage: String?, completion: @escaping (Result<NewsData, Error>) -> Void)
+    func loadImage(for article: Article, completion: @escaping ((Result<UIImage, Error>) -> Void))
 }
 
 final class NewsService {
@@ -24,9 +25,29 @@ final class NewsService {
 
 extension NewsService: NewsServiceProtocol {
     
-    func getNews(completion: @escaping (Result<NewsData, Error>) -> Void) {
-        fetchData(apiEndpoint: .news, completion: completion)
+    func loadNews(nextPage: String?, completion: @escaping (Result<NewsData, Error>) -> Void) {
+        fetchData(apiEndpoint: .news(nextPage: nextPage), completion: completion)
     }
+    
+    func loadImage(for article: Article, completion: @escaping ((Result<UIImage, Error>) -> Void)) {
+        guard let imageUrl = article.imageUrl,
+              let url = URL(string: imageUrl)
+        else {
+            completion(.failure(NetworkError.wrongURL))
+            return
+        }
+
+        networkManager.fetchData(url: url) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let data):
+                processImageData(data, imageURL: url, completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
     
     private func fetchData<T: Decodable>(apiEndpoint: APIEndpoints, completion: @escaping (Result<T, Error>) -> Void) {
         networkManager.fetchData(apiEndpoint: apiEndpoint) { [weak self] result in
@@ -48,5 +69,13 @@ extension NewsService: NewsServiceProtocol {
         case .failure(let error):
             completion(.failure(error))
         }
+    }
+    
+    private func processImageData(_ data: Data, imageURL: URL, completion: @escaping ((Result<UIImage, Error>) -> Void)) {
+        guard let image = UIImage(data: data) else {
+            completion(.failure(DataCodingError.decodingToImageFailed))
+            return
+        }
+        completion(.success(image))
     }
 }
