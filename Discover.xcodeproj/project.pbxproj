@@ -71,6 +71,9 @@
 		6291CC592A60589400E8AB34 /* CoreDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC582A60589400E8AB34 /* CoreDataManagerMock.swift */; };
 		6291CC5B2A605CA200E8AB34 /* NewsJsonMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC5A2A605CA200E8AB34 /* NewsJsonMock.json */; };
 		6291CC5D2A605CE500E8AB34 /* GetJSONMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC5C2A605CE500E8AB34 /* GetJSONMock.swift */; };
+		6291CC5F2A608E0F00E8AB34 /* NewsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC5E2A608E0F00E8AB34 /* NewsInteractorTests.swift */; };
+		6291CC612A608E8700E8AB34 /* NewsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC602A608E8700E8AB34 /* NewsServiceMock.swift */; };
+		6291CC632A60931300E8AB34 /* NewsPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC622A60931300E8AB34 /* NewsPresenterMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +154,9 @@
 		6291CC582A60589400E8AB34 /* CoreDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerMock.swift; sourceTree = "<group>"; };
 		6291CC5A2A605CA200E8AB34 /* NewsJsonMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewsJsonMock.json; sourceTree = "<group>"; };
 		6291CC5C2A605CE500E8AB34 /* GetJSONMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJSONMock.swift; sourceTree = "<group>"; };
+		6291CC5E2A608E0F00E8AB34 /* NewsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInteractorTests.swift; sourceTree = "<group>"; };
+		6291CC602A608E8700E8AB34 /* NewsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceMock.swift; sourceTree = "<group>"; };
+		6291CC622A60931300E8AB34 /* NewsPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPresenterMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,13 +417,32 @@
 		6291CC4E2A60510A00E8AB34 /* DiscoverTests */ = {
 			isa = PBXGroup;
 			children = (
-				6291CC5A2A605CA200E8AB34 /* NewsJsonMock.json */,
+				6291CC652A60934B00E8AB34 /* Shared */,
+				6291CC642A60932600E8AB34 /* Mocks */,
+				6291CC5E2A608E0F00E8AB34 /* NewsInteractorTests.swift */,
 				6291CC4F2A60510A00E8AB34 /* NewsServiceTests.swift */,
-				6291CC562A60511C00E8AB34 /* NetworkManagerMock.swift */,
-				6291CC582A60589400E8AB34 /* CoreDataManagerMock.swift */,
-				6291CC5C2A605CE500E8AB34 /* GetJSONMock.swift */,
 			);
 			path = DiscoverTests;
+			sourceTree = "<group>";
+		};
+		6291CC642A60932600E8AB34 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				6291CC5A2A605CA200E8AB34 /* NewsJsonMock.json */,
+				6291CC622A60931300E8AB34 /* NewsPresenterMock.swift */,
+				6291CC602A608E8700E8AB34 /* NewsServiceMock.swift */,
+				6291CC562A60511C00E8AB34 /* NetworkManagerMock.swift */,
+				6291CC582A60589400E8AB34 /* CoreDataManagerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		6291CC652A60934B00E8AB34 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				6291CC5C2A605CE500E8AB34 /* GetJSONMock.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,8 +611,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6291CC5D2A605CE500E8AB34 /* GetJSONMock.swift in Sources */,
+				6291CC5F2A608E0F00E8AB34 /* NewsInteractorTests.swift in Sources */,
 				6291CC572A60511C00E8AB34 /* NetworkManagerMock.swift in Sources */,
 				6291CC592A60589400E8AB34 /* CoreDataManagerMock.swift in Sources */,
+				6291CC612A608E8700E8AB34 /* NewsServiceMock.swift in Sources */,
+				6291CC632A60931300E8AB34 /* NewsPresenterMock.swift in Sources */,
 				6291CC502A60510A00E8AB34 /* NewsServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
