@@ -14,8 +14,10 @@ protocol ArticleCellProtocol: AnyObject {
 final class ArticleCell: UITableViewCell {
     private let articleImage = UIImageView()
     private let verticalStack = UIStackView()
+    private let creatorDateStack = UIStackView()
     
     private let title = UILabel()
+    private let creatorLabel = UILabel()
     private let dateLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,6 +37,7 @@ final class ArticleCell: UITableViewCell {
 extension ArticleCell: ArticleCellProtocol {
     func setup(with article: Article) {
         title.text = article.title
+        creatorLabel.text = article.creator
         dateLabel.text = article.dateString
         articleImage.image = article.image
     }
@@ -51,19 +54,30 @@ extension ArticleCell {
             addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
-        [title, dateLabel].forEach { verticalStack.addArrangedSubview($0) }
+        [title, creatorDateStack].forEach { verticalStack.addArrangedSubview($0) }
+        [creatorLabel, dateLabel].forEach { creatorDateStack.addArrangedSubview($0) }
+        
         verticalStack.axis = .vertical
+        verticalStack.alignment = .leading
+        
+        creatorDateStack.axis = .horizontal
+        creatorDateStack.spacing = 10
         
         articleImage.contentMode = .scaleAspectFill
         articleImage.layer.cornerRadius = 20
         articleImage.clipsToBounds = true
         
         title.numberOfLines = 0
-        title.font = .boldSystemFont(ofSize: 13)
-        title.setContentHuggingPriority(.defaultLow, for: .vertical)
+        title.font = Font.headerCell
+        title.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        
+        creatorLabel.numberOfLines = 0
+        creatorLabel.font = Font.generalLight
+        creatorLabel.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
         dateLabel.numberOfLines = 0
-        dateLabel.font = .systemFont(ofSize: 12)
+        dateLabel.textAlignment = .right
+        dateLabel.font = Font.generalLight
     }
     
     private func setupConstraints() {
@@ -79,7 +93,7 @@ extension ArticleCell {
             verticalStack.bottomAnchor.constraint(equalTo: articleImage.bottomAnchor),
             
             title.widthAnchor.constraint(equalTo: verticalStack.widthAnchor),
-            dateLabel.widthAnchor.constraint(equalTo: verticalStack.widthAnchor)
+            creatorDateStack.widthAnchor.constraint(equalTo: verticalStack.widthAnchor)
         ])
     }
 }

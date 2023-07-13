@@ -11,6 +11,8 @@ protocol NewsInteractorProtocol: AnyObject {
     func loadNews(isMoreLoad: Bool)
     func loadImage(for article: Article, completion: @escaping () -> Void)
     func loadImages(for articles: [Article])
+    
+    func synchronizeWithLocalData(articles: [Article])
 }
 
 final class NewsInteractor {
@@ -30,6 +32,17 @@ final class NewsInteractor {
 
 extension NewsInteractor: NewsInteractorProtocol {
     
+    func synchronizeWithLocalData(articles: [Article]) {
+        let favorites = Set(newsService.getFavoritesNews())
+        for article in articles {
+            guard favorites.contains(article) else { continue }
+            article.isFavorite = true
+            if let favorite = favorites.first(where: { $0 == article }) {
+                article.id = favorite.id
+            }
+        }
+    }
+
     func loadNews(isMoreLoad: Bool) {
         guard !isLoading else { return }
         isLoading = true

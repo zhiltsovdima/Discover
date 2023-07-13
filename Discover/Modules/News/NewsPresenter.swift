@@ -62,6 +62,8 @@ extension NewsPresenter: NewsPresenterProtocol {
                 description: $0.description ?? "",
                 content: $0.content ?? "",
                 category: $0.category?.first?.capitalized ?? "Other",
+                link: $0.link,
+                creator: $0.creator?.first,
                 date: date,
                 imageUrl: $0.imageUrl
             )
@@ -72,6 +74,7 @@ extension NewsPresenter: NewsPresenterProtocol {
             news = articles
         }
         interactor.loadImages(for: articles)
+        interactor.synchronizeWithLocalData(articles: articles)
     }
     
     // UI Updating

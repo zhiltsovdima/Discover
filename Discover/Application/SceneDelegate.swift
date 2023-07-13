@@ -12,7 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var router: AppRouterProtocol?
     let networkManager = NetworkManager()
-    lazy var newsService = NewsService(networkManager: networkManager)
+    let coreDataManager = CoreDataManager()
+    lazy var newsService = NewsService(networkManager, coreDataManager)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 

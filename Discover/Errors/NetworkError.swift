@@ -18,6 +18,7 @@ enum NetworkError: Error, Equatable {
     case failed
     case noData
     case serverError(statusCode: Int)
+    case unexpectedResponse
     
     var description: String {
         switch self {
@@ -41,6 +42,8 @@ enum NetworkError: Error, Equatable {
             return "Response returned with no data to decode"
         case .serverError(let statusCode):
             return "Server error. Status code: \(statusCode)"
+        case .unexpectedResponse:
+            return "unexpectedResponse"
         }
     }
 }

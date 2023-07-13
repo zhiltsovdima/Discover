@@ -7,22 +7,23 @@
 
 import Foundation
 
-struct NewsData: Codable {
+struct NewsData: Codable, Equatable {
     let results: [ArticleData]
     var nextPage: String?
 }
 
-struct ArticleData: Codable {
+struct ArticleData: Codable, Equatable {
     var title: String?
     var link: String?
     var description: String?
     var content: String?
     var category: [String]?
+    var creator: [String]?
     var pubDate: String?
     var imageUrl: String?
     
     enum CodingKeys: String, CodingKey {
-        case title, link, description, content, category, pubDate
+        case title, link, description, content, category, creator, pubDate
         case imageUrl = "image_url"
     }
     
@@ -33,6 +34,7 @@ struct ArticleData: Codable {
         self.description = try container.decodeIfPresent(String.self, forKey: .description)
         self.content = try container.decodeIfPresent(String.self, forKey: .content)
         self.category = try container.decodeIfPresent([String].self, forKey: .category)
+        self.creator = try container.decodeIfPresent([String].self, forKey: .creator)
         self.pubDate = try container.decodeIfPresent(String.self, forKey: .pubDate)
         self.imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl)
     }

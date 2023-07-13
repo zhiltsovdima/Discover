@@ -12,10 +12,20 @@ final class Article {
     let description: String
     let content: String
     let category: String
+    let link: String?
+    let creator: String?
     let date: Date?
     let imageUrl: String?
     
     var image: UIImage?
+    var isFavorite = false
+    var id: String?
+    
+    var linkString: NSAttributedString? {
+        guard let link else { return nil }
+        let linkString = "Source: \(link)"
+        return NSAttributedString(string: linkString, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue])
+    }
     
     var dateString: String {
         guard let date else { return "" }
@@ -42,11 +52,13 @@ final class Article {
         }
     }
     
-    init(title: String, description: String, content: String, category: String, date: Date?, imageUrl: String?) {
+    init(title: String, description: String, content: String, category: String, link: String?, creator: String?, date: Date?, imageUrl: String?) {
         self.title = title
         self.description = description
         self.content = content
         self.category = category
+        self.link = link
+        self.creator = creator
         self.date = date
         self.imageUrl = imageUrl
     }
