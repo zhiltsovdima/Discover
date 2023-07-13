@@ -11,6 +11,7 @@ protocol ArticleDetailsPresenterProtocol: AnyObject {
     func viewDidLoad()
     func favoriteButtonTapped()
     func backButtonTapped()
+    func linkTapped()
 }
 
 final class ArticleDetailsPresenter {
@@ -32,21 +33,21 @@ final class ArticleDetailsPresenter {
 extension ArticleDetailsPresenter: ArticleDetailsPresenterProtocol {
     
     func viewDidLoad() {
-        view?.updateUI(
-            title: article.title,
-            category: article.category,
-            description: article.description,
-            content: article.content,
-            image: article.image ?? R.Images.defaultImage,
-            timeAgo: article.timeAgo
-        )
+        view?.updateUI(with: article)
+        view?.updateFavoriteButton(isFavorite: article.isFavorite)
     }
     
     func favoriteButtonTapped() {
-        view?.updateFavoriteButton(isFavorite: Bool.random())
+        interactor.favoriteButtonTapped(article: article)
+        view?.updateFavoriteButton(isFavorite: article.isFavorite)
     }
     
     func backButtonTapped() {
         router.backToRoot()
+    }
+    
+    func linkTapped() {
+        guard let link = article.link else { return }
+        interactor.linkTapped(link: link)
     }
 }

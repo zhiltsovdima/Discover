@@ -15,6 +15,8 @@ final class GradientImageView: UIImageView {
     private let labelsStackView = UIStackView()
     private let categoryView = CategoryView()
     private let titleLabel = UILabel()
+    private let creatorAndTimeStack = UIStackView()
+    private let creatorLabel = UILabel()
     private let timeAgoLabel = UILabel()
     
     override func layoutSubviews() {
@@ -40,7 +42,7 @@ final class GradientImageView: UIImageView {
         contentMode = .scaleAspectFill
     }
     
-    func setupLabels(category: String, title: String, timeAgo: String) {
+    func setupLabels(category: String, title: String, creator: String?, timeAgo: String) {
         addSubview(labelsStackView)
         labelsStackView.axis = .vertical
         labelsStackView.alignment = .leading
@@ -52,27 +54,33 @@ final class GradientImageView: UIImageView {
         titleLabel.text = title
         titleLabel.textColor = .white
         titleLabel.numberOfLines = 0
-        titleLabel.font = .boldSystemFont(ofSize: 16)
+        titleLabel.font = Font.header
+        
+        creatorLabel.text = creator
+        creatorLabel.textColor = .white
+        creatorLabel.font = Font.generalLight
+        creatorLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         
         timeAgoLabel.text = timeAgo
-        timeAgoLabel.textColor = .lightText
-        timeAgoLabel.font = .boldSystemFont(ofSize: 12)
-        timeAgoLabel.numberOfLines = 0
+        timeAgoLabel.textColor = .white
+        timeAgoLabel.font = Font.generalLight
         
-        [categoryView, titleLabel, timeAgoLabel].forEach {
+        creatorAndTimeStack.axis = .horizontal
+        creatorAndTimeStack.alignment = .leading
+        creatorAndTimeStack.spacing = 10
+        
+        [categoryView, titleLabel, creatorAndTimeStack].forEach {
             labelsStackView.addArrangedSubview($0)
         }
+    
+        [timeAgoLabel, creatorLabel].forEach { creatorAndTimeStack.addArrangedSubview($0) }
         
         NSLayoutConstraint.activate([
             labelsStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
             labelsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             labelsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            categoryView.widthAnchor.constraint(equalToConstant: 100),
-            categoryView.heightAnchor.constraint(equalToConstant: 30),
-            
             titleLabel.widthAnchor.constraint(equalTo: labelsStackView.widthAnchor),
-            timeAgoLabel.widthAnchor.constraint(equalTo: labelsStackView.widthAnchor)
         ])
     }
 }

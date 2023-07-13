@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ArticleDetailsViewProtocol: AnyObject {
-    func updateUI(title: String, category: String, description: String, content: String, image: UIImage, timeAgo: String) 
+    func updateUI(with article: Article)
     func updateFavoriteButton(isFavorite: Bool)
 }
 
@@ -22,6 +22,7 @@ final class ArticleDetailsController: UIViewController {
     private let textStackView = UIStackView()
     private let descriptionLabel = UILabel()
     private let contentLabel = UILabel()
+    private let linkLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +31,9 @@ final class ArticleDetailsController: UIViewController {
         setupNavBarButtons()
         setupViews()
         setupConstraints()
+        setupTapGesture()
         presenter.viewDidLoad()
     }
-}
-
-// MARK: - Setup UI
-
-extension ArticleDetailsController {
     
     @objc private func favoriteButtonTapped() {
         presenter.favoriteButtonTapped()
@@ -46,8 +43,17 @@ extension ArticleDetailsController {
         presenter.backButtonTapped()
     }
     
+    @objc func linkTapped() {
+        presenter.linkTapped()
+    }
+}
+
+// MARK: - Setup UI
+
+extension ArticleDetailsController {
+    
     private func setupAppearance() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .black
     }
     
     private func setupNavBarButtons() {
@@ -68,6 +74,11 @@ extension ArticleDetailsController {
         navigationItem.leftBarButtonItem = leftButton
     }
     
+    private func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(linkTapped))
+        linkLabel.addGestureRecognizer(tapGesture)
+    }
+    
     private func setupViews() {
         view.addSubview(scrollView)
         scrollView.delegate = self
@@ -83,17 +94,21 @@ extension ArticleDetailsController {
         textStackView.axis = .vertical
         textStackView.spacing = 10
         
-        descriptionLabel.font = .boldSystemFont(ofSize: 16)
+        descriptionLabel.font = Font.generalBold
         descriptionLabel.numberOfLines = 0
         
-        contentLabel.font = .systemFont(ofSize: 14)
+        contentLabel.font = Font.general
         contentLabel.numberOfLines = 0
+        
+        linkLabel.font = Font.generalBold
+        linkLabel.numberOfLines = 0
+        linkLabel.isUserInteractionEnabled = true
         
         [articleImage, detailsView].forEach {
             scrollView.addSubview($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
-        [descriptionLabel, contentLabel].forEach { textStackView.addArrangedSubview($0) }
+        [descriptionLabel, contentLabel, linkLabel].forEach { textStackView.addArrangedSubview($0) }
     }
     
     private func setupConstraints() {
@@ -121,10 +136,11 @@ extension ArticleDetailsController {
             textStackView.topAnchor.constraint(equalTo: detailsView.topAnchor, constant: 40),
             textStackView.leadingAnchor.constraint(equalTo: detailsView.leadingAnchor, constant: 20),
             textStackView.trailingAnchor.constraint(equalTo: detailsView.trailingAnchor, constant: -20),
-            textStackView.bottomAnchor.constraint(equalTo: detailsView.bottomAnchor, constant: -20),
+            textStackView.bottomAnchor.constraint(equalTo: detailsView.bottomAnchor, constant: -40),
             
             descriptionLabel.widthAnchor.constraint(equalTo: textStackView.widthAnchor),
-            contentLabel.widthAnchor.constraint(equalTo: textStackView.widthAnchor)
+            contentLabel.widthAnchor.constraint(equalTo: textStackView.widthAnchor),
+            linkLabel.widthAnchor.constraint(equalTo: textStackView.widthAnchor)
         ])
     }
 }
@@ -132,11 +148,17 @@ extension ArticleDetailsController {
 // MARK: - ArticleDetailsViewProtocol
 
 extension ArticleDetailsController: ArticleDetailsViewProtocol {
-    func updateUI(title: String, category: String, description: String, content: String, image: UIImage, timeAgo: String) {
-        descriptionLabel.text = description
-        contentLabel.text = content
-        articleImage.image = image
-        articleImage.setupLabels(category: category, title: title, timeAgo: timeAgo)
+    func updateUI(with article: Article) {
+        descriptionLabel.text = article.description
+        contentLabel.text = article.content
+        linkLabel.attributedText = article.linkString
+        articleImage.image = article.image
+        articleImage.setupLabels(
+            category: article.category,
+            title: article.title,
+            creator: article.creator,
+            timeAgo: article.timeAgo
+        )
     }
     
     func updateFavoriteButton(isFavorite: Bool) {
