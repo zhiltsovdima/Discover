@@ -41,7 +41,7 @@ final class AppRouter: AppRouterProtocol {
             let controller = ModuleBuilder.createNewsModule(router: newsRouter, newsService: newsService)
             navigationController.setViewControllers([controller], animated: false)
         case .favorites:
-            let favoritesRouter = FavoritesRouter(navigationController)
+            let favoritesRouter = NewsRouter(navigationController, newsService)
             let controller = ModuleBuilder.createFavoritesModule(router: favoritesRouter, newsService: newsService)
             navigationController.setViewControllers([controller], animated: false)
         }

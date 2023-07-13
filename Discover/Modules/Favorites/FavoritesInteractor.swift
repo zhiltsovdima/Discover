@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FavoritesInteractorProtocol: AnyObject {
-    
+    func loadFavoriteNews()
 }
 
 final class FavoritesInteractor{
@@ -25,4 +25,9 @@ final class FavoritesInteractor{
 
 extension FavoritesInteractor: FavoritesInteractorProtocol {
     
+    func loadFavoriteNews() {
+//        let favorites = newsService.getFavorites()
+        let favorites = newsService.getFavoritesNews()
+        presenter.updateUI(with: favorites)
+    }
 }

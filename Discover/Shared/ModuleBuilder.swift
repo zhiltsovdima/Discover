@@ -26,7 +26,7 @@ final class ModuleBuilder: ModuleBuilderProtocol {
         return view
     }
 
-    static func createFavoritesModule(router: FavoritesRouterProtocol, newsService: NewsServiceProtocol) -> UIViewController & FavoritesViewProtocol {
+    static func createFavoritesModule(router: NewsRouterProtocol, newsService: NewsServiceProtocol) -> UIViewController & FavoritesViewProtocol {
         let interactor = FavoritesInteractor(newsService: newsService)
         let presenter = FavoritesPresenter(router: router)
         let view = FavoritesController()

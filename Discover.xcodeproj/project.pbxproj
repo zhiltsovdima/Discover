@@ -31,7 +31,6 @@
 		6291CBEC2A5D933E00E8AB34 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CBEB2A5D933E00E8AB34 /* NewsData.swift */; };
 		6291CBEF2A5DB13300E8AB34 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CBEE2A5DB13300E8AB34 /* ArticleCell.swift */; };
 		6291CBF22A5DB71000E8AB34 /* NewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CBF12A5DB71000E8AB34 /* NewsRouter.swift */; };
-		6291CBF42A5DB72500E8AB34 /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CBF32A5DB72500E8AB34 /* FavoritesRouter.swift */; };
 		6291CBF72A5DB95E00E8AB34 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CBF62A5DB95E00E8AB34 /* Article.swift */; };
 		6291CBFC2A5E5BAB00E8AB34 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CBFB2A5E5BAB00E8AB34 /* FavoritesController.swift */; };
 		6291CBFE2A5E5BCD00E8AB34 /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CBFD2A5E5BCD00E8AB34 /* FavoritesPresenter.swift */; };
@@ -44,7 +43,45 @@
 		6291CC112A5EE5A300E8AB34 /* UIButton + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC102A5EE5A300E8AB34 /* UIButton + ext.swift */; };
 		6291CC142A5F17E700E8AB34 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC132A5F17E700E8AB34 /* CategoryView.swift */; };
 		6291CC162A5F183200E8AB34 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC152A5F183200E8AB34 /* GradientImageView.swift */; };
+		6291CC192A5FD95500E8AB34 /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC172A5FD95500E8AB34 /* News.xcdatamodeld */; };
+		6291CC1C2A5FDAB500E8AB34 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC1B2A5FDAB500E8AB34 /* CoreDataManager.swift */; };
+		6291CC1E2A5FDAE400E8AB34 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC1D2A5FDAE400E8AB34 /* CoreDataError.swift */; };
+		6291CC202A603A1800E8AB34 /* Article + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC1F2A603A1800E8AB34 /* Article + ext.swift */; };
+		6291CC362A603A8B00E8AB34 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC222A603A8B00E8AB34 /* Font.swift */; };
+		6291CC372A603A8B00E8AB34 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC242A603A8B00E8AB34 /* Montserrat-LightItalic.ttf */; };
+		6291CC382A603A8B00E8AB34 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC252A603A8B00E8AB34 /* Montserrat-Medium.ttf */; };
+		6291CC392A603A8B00E8AB34 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC262A603A8B00E8AB34 /* Montserrat-BoldItalic.ttf */; };
+		6291CC3A2A603A8B00E8AB34 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC272A603A8B00E8AB34 /* Montserrat-Light.ttf */; };
+		6291CC3B2A603A8B00E8AB34 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC282A603A8B00E8AB34 /* Montserrat-ThinItalic.ttf */; };
+		6291CC3C2A603A8B00E8AB34 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC292A603A8B00E8AB34 /* Montserrat-ExtraLight.ttf */; };
+		6291CC3D2A603A8B00E8AB34 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC2A2A603A8B00E8AB34 /* Montserrat-Thin.ttf */; };
+		6291CC3E2A603A8B00E8AB34 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC2B2A603A8B00E8AB34 /* Montserrat-Bold.ttf */; };
+		6291CC3F2A603A8B00E8AB34 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC2C2A603A8B00E8AB34 /* Montserrat-MediumItalic.ttf */; };
+		6291CC402A603A8B00E8AB34 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC2D2A603A8B00E8AB34 /* Montserrat-BlackItalic.ttf */; };
+		6291CC412A603A8B00E8AB34 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC2E2A603A8B00E8AB34 /* Montserrat-SemiBold.ttf */; };
+		6291CC422A603A8B00E8AB34 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC2F2A603A8B00E8AB34 /* Montserrat-ExtraLightItalic.ttf */; };
+		6291CC432A603A8B00E8AB34 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC302A603A8B00E8AB34 /* Montserrat-ExtraBold.ttf */; };
+		6291CC442A603A8B00E8AB34 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC312A603A8B00E8AB34 /* Montserrat-Black.ttf */; };
+		6291CC452A603A8B00E8AB34 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC322A603A8B00E8AB34 /* Montserrat-Regular.ttf */; };
+		6291CC462A603A8B00E8AB34 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC332A603A8B00E8AB34 /* Montserrat-Italic.ttf */; };
+		6291CC472A603A8B00E8AB34 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC342A603A8B00E8AB34 /* Montserrat-SemiBoldItalic.ttf */; };
+		6291CC482A603A8B00E8AB34 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC352A603A8B00E8AB34 /* Montserrat-ExtraBoldItalic.ttf */; };
+		6291CC502A60510A00E8AB34 /* NewsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC4F2A60510A00E8AB34 /* NewsServiceTests.swift */; };
+		6291CC572A60511C00E8AB34 /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC562A60511C00E8AB34 /* NetworkManagerMock.swift */; };
+		6291CC592A60589400E8AB34 /* CoreDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC582A60589400E8AB34 /* CoreDataManagerMock.swift */; };
+		6291CC5B2A605CA200E8AB34 /* NewsJsonMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 6291CC5A2A605CA200E8AB34 /* NewsJsonMock.json */; };
+		6291CC5D2A605CE500E8AB34 /* GetJSONMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291CC5C2A605CE500E8AB34 /* GetJSONMock.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6291CC512A60510A00E8AB34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6291CB9D2A5D4E8200E8AB34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6291CBA42A5D4E8300E8AB34;
+			remoteInfo = Discover;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6291CBA52A5D4E8300E8AB34 /* Discover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Discover.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,7 +110,6 @@
 		6291CBEB2A5D933E00E8AB34 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		6291CBEE2A5DB13300E8AB34 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		6291CBF12A5DB71000E8AB34 /* NewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRouter.swift; sourceTree = "<group>"; };
-		6291CBF32A5DB72500E8AB34 /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
 		6291CBF62A5DB95E00E8AB34 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		6291CBFB2A5E5BAB00E8AB34 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		6291CBFD2A5E5BCD00E8AB34 /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
@@ -86,10 +122,46 @@
 		6291CC102A5EE5A300E8AB34 /* UIButton + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + ext.swift"; sourceTree = "<group>"; };
 		6291CC132A5F17E700E8AB34 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		6291CC152A5F183200E8AB34 /* GradientImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientImageView.swift; sourceTree = "<group>"; };
+		6291CC182A5FD95500E8AB34 /* News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = News.xcdatamodel; sourceTree = "<group>"; };
+		6291CC1B2A5FDAB500E8AB34 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		6291CC1D2A5FDAE400E8AB34 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		6291CC1F2A603A1800E8AB34 /* Article + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article + ext.swift"; sourceTree = "<group>"; };
+		6291CC222A603A8B00E8AB34 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		6291CC242A603A8B00E8AB34 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		6291CC252A603A8B00E8AB34 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		6291CC262A603A8B00E8AB34 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		6291CC272A603A8B00E8AB34 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		6291CC282A603A8B00E8AB34 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		6291CC292A603A8B00E8AB34 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		6291CC2A2A603A8B00E8AB34 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		6291CC2B2A603A8B00E8AB34 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		6291CC2C2A603A8B00E8AB34 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		6291CC2D2A603A8B00E8AB34 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		6291CC2E2A603A8B00E8AB34 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		6291CC2F2A603A8B00E8AB34 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		6291CC302A603A8B00E8AB34 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6291CC312A603A8B00E8AB34 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		6291CC322A603A8B00E8AB34 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		6291CC332A603A8B00E8AB34 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		6291CC342A603A8B00E8AB34 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		6291CC352A603A8B00E8AB34 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		6291CC4D2A60510A00E8AB34 /* DiscoverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiscoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6291CC4F2A60510A00E8AB34 /* NewsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceTests.swift; sourceTree = "<group>"; };
+		6291CC562A60511C00E8AB34 /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
+		6291CC582A60589400E8AB34 /* CoreDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerMock.swift; sourceTree = "<group>"; };
+		6291CC5A2A605CA200E8AB34 /* NewsJsonMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NewsJsonMock.json; sourceTree = "<group>"; };
+		6291CC5C2A605CE500E8AB34 /* GetJSONMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJSONMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6291CBA22A5D4E8300E8AB34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6291CC4A2A60510A00E8AB34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -103,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				6291CBA72A5D4E8300E8AB34 /* Discover */,
+				6291CC4E2A60510A00E8AB34 /* DiscoverTests */,
 				6291CBA62A5D4E8300E8AB34 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				6291CBA52A5D4E8300E8AB34 /* Discover.app */,
+				6291CC4D2A60510A00E8AB34 /* DiscoverTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,12 +192,13 @@
 		6291CBA72A5D4E8300E8AB34 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				6291CBF02A5DB70000E8AB34 /* Routers */,
 				6291CBBC2A5D4EEA00E8AB34 /* Application */,
+				6291CBF02A5DB70000E8AB34 /* Routers */,
 				6291CBC52A5D52F100E8AB34 /* Shared */,
+				6291CBF52A5DB94500E8AB34 /* Entities */,
 				6291CBC82A5D56C200E8AB34 /* Modules */,
 				6291CBE12A5D900C00E8AB34 /* Services */,
-				6291CBD42A5D84B500E8AB34 /* Network */,
+				6291CC1A2A5FDAA500E8AB34 /* Managers */,
 				6291CBDE2A5D879B00E8AB34 /* Errors */,
 				6291CBD72A5D865000E8AB34 /* Extension */,
 				6291CBBE2A5D506800E8AB34 /* Resources */,
@@ -144,6 +219,7 @@
 		6291CBBD2A5D4EFD00E8AB34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6291CC172A5FD95500E8AB34 /* News.xcdatamodeld */,
 				6291CBB12A5D4E8400E8AB34 /* Assets.xcassets */,
 				6291CBB32A5D4E8400E8AB34 /* LaunchScreen.storyboard */,
 				6291CBB62A5D4E8400E8AB34 /* Info.plist */,
@@ -154,6 +230,7 @@
 		6291CBBE2A5D506800E8AB34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6291CC212A603A8B00E8AB34 /* Fonts */,
 				6291CBBF2A5D507300E8AB34 /* R.swift */,
 				6291CBD22A5D836300E8AB34 /* PrivateKey.swift */,
 			);
@@ -184,7 +261,6 @@
 		6291CBC92A5D56CE00E8AB34 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				6291CBF52A5DB94500E8AB34 /* Entity */,
 				6291CBED2A5DB12900E8AB34 /* Views */,
 				6291CBCA2A5D56E100E8AB34 /* NewsViewController.swift */,
 				6291CBCC2A5D574000E8AB34 /* NewsPresenter.swift */,
@@ -196,7 +272,6 @@
 		6291CBD42A5D84B500E8AB34 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				6291CBEA2A5D930C00E8AB34 /* APIModels */,
 				6291CBD52A5D84EE00E8AB34 /* APIEndpoint.swift */,
 				6291CBDC2A5D877600E8AB34 /* NetworkManager.swift */,
 			);
@@ -209,6 +284,7 @@
 				6291CBD82A5D866100E8AB34 /* URL + ext.swift */,
 				6291CBDA2A5D867F00E8AB34 /* URLComponents + ext.swift */,
 				6291CC102A5EE5A300E8AB34 /* UIButton + ext.swift */,
+				6291CC1F2A603A1800E8AB34 /* Article + ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -218,6 +294,7 @@
 			children = (
 				6291CBDF2A5D87AF00E8AB34 /* NetworkError.swift */,
 				6291CBE62A5D91E000E8AB34 /* DataCoderError.swift */,
+				6291CC1D2A5FDAE400E8AB34 /* CoreDataError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -228,14 +305,6 @@
 				6291CBE22A5D902000E8AB34 /* NewsService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		6291CBEA2A5D930C00E8AB34 /* APIModels */ = {
-			isa = PBXGroup;
-			children = (
-				6291CBEB2A5D933E00E8AB34 /* NewsData.swift */,
-			);
-			path = APIModels;
 			sourceTree = "<group>";
 		};
 		6291CBED2A5DB12900E8AB34 /* Views */ = {
@@ -253,17 +322,17 @@
 			children = (
 				6291CBC62A5D559500E8AB34 /* Router.swift */,
 				6291CBF12A5DB71000E8AB34 /* NewsRouter.swift */,
-				6291CBF32A5DB72500E8AB34 /* FavoritesRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
 		};
-		6291CBF52A5DB94500E8AB34 /* Entity */ = {
+		6291CBF52A5DB94500E8AB34 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				6291CBEB2A5D933E00E8AB34 /* NewsData.swift */,
 				6291CBF62A5DB95E00E8AB34 /* Article.swift */,
 			);
-			path = Entity;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		6291CBFA2A5E5B9100E8AB34 /* Favorites */ = {
@@ -296,6 +365,61 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6291CC1A2A5FDAA500E8AB34 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6291CBD42A5D84B500E8AB34 /* Network */,
+				6291CC1B2A5FDAB500E8AB34 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		6291CC212A603A8B00E8AB34 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6291CC232A603A8B00E8AB34 /* Fonts */,
+				6291CC222A603A8B00E8AB34 /* Font.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6291CC232A603A8B00E8AB34 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6291CC242A603A8B00E8AB34 /* Montserrat-LightItalic.ttf */,
+				6291CC252A603A8B00E8AB34 /* Montserrat-Medium.ttf */,
+				6291CC262A603A8B00E8AB34 /* Montserrat-BoldItalic.ttf */,
+				6291CC272A603A8B00E8AB34 /* Montserrat-Light.ttf */,
+				6291CC282A603A8B00E8AB34 /* Montserrat-ThinItalic.ttf */,
+				6291CC292A603A8B00E8AB34 /* Montserrat-ExtraLight.ttf */,
+				6291CC2A2A603A8B00E8AB34 /* Montserrat-Thin.ttf */,
+				6291CC2B2A603A8B00E8AB34 /* Montserrat-Bold.ttf */,
+				6291CC2C2A603A8B00E8AB34 /* Montserrat-MediumItalic.ttf */,
+				6291CC2D2A603A8B00E8AB34 /* Montserrat-BlackItalic.ttf */,
+				6291CC2E2A603A8B00E8AB34 /* Montserrat-SemiBold.ttf */,
+				6291CC2F2A603A8B00E8AB34 /* Montserrat-ExtraLightItalic.ttf */,
+				6291CC302A603A8B00E8AB34 /* Montserrat-ExtraBold.ttf */,
+				6291CC312A603A8B00E8AB34 /* Montserrat-Black.ttf */,
+				6291CC322A603A8B00E8AB34 /* Montserrat-Regular.ttf */,
+				6291CC332A603A8B00E8AB34 /* Montserrat-Italic.ttf */,
+				6291CC342A603A8B00E8AB34 /* Montserrat-SemiBoldItalic.ttf */,
+				6291CC352A603A8B00E8AB34 /* Montserrat-ExtraBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6291CC4E2A60510A00E8AB34 /* DiscoverTests */ = {
+			isa = PBXGroup;
+			children = (
+				6291CC5A2A605CA200E8AB34 /* NewsJsonMock.json */,
+				6291CC4F2A60510A00E8AB34 /* NewsServiceTests.swift */,
+				6291CC562A60511C00E8AB34 /* NetworkManagerMock.swift */,
+				6291CC582A60589400E8AB34 /* CoreDataManagerMock.swift */,
+				6291CC5C2A605CE500E8AB34 /* GetJSONMock.swift */,
+			);
+			path = DiscoverTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,6 +440,24 @@
 			productReference = 6291CBA52A5D4E8300E8AB34 /* Discover.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6291CC4C2A60510A00E8AB34 /* DiscoverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6291CC532A60510A00E8AB34 /* Build configuration list for PBXNativeTarget "DiscoverTests" */;
+			buildPhases = (
+				6291CC492A60510A00E8AB34 /* Sources */,
+				6291CC4A2A60510A00E8AB34 /* Frameworks */,
+				6291CC4B2A60510A00E8AB34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6291CC522A60510A00E8AB34 /* PBXTargetDependency */,
+			);
+			name = DiscoverTests;
+			productName = DiscoverTests;
+			productReference = 6291CC4D2A60510A00E8AB34 /* DiscoverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -328,6 +470,10 @@
 				TargetAttributes = {
 					6291CBA42A5D4E8300E8AB34 = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					6291CC4C2A60510A00E8AB34 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 6291CBA42A5D4E8300E8AB34;
 					};
 				};
 			};
@@ -345,6 +491,7 @@
 			projectRoot = "";
 			targets = (
 				6291CBA42A5D4E8300E8AB34 /* Discover */,
+				6291CC4C2A60510A00E8AB34 /* DiscoverTests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,8 +501,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6291CC472A603A8B00E8AB34 /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				6291CC3F2A603A8B00E8AB34 /* Montserrat-MediumItalic.ttf in Resources */,
+				6291CC3E2A603A8B00E8AB34 /* Montserrat-Bold.ttf in Resources */,
+				6291CC452A603A8B00E8AB34 /* Montserrat-Regular.ttf in Resources */,
+				6291CC412A603A8B00E8AB34 /* Montserrat-SemiBold.ttf in Resources */,
+				6291CC3A2A603A8B00E8AB34 /* Montserrat-Light.ttf in Resources */,
+				6291CC3D2A603A8B00E8AB34 /* Montserrat-Thin.ttf in Resources */,
+				6291CC3B2A603A8B00E8AB34 /* Montserrat-ThinItalic.ttf in Resources */,
 				6291CBB52A5D4E8400E8AB34 /* LaunchScreen.storyboard in Resources */,
 				6291CBB22A5D4E8400E8AB34 /* Assets.xcassets in Resources */,
+				6291CC382A603A8B00E8AB34 /* Montserrat-Medium.ttf in Resources */,
+				6291CC442A603A8B00E8AB34 /* Montserrat-Black.ttf in Resources */,
+				6291CC3C2A603A8B00E8AB34 /* Montserrat-ExtraLight.ttf in Resources */,
+				6291CC432A603A8B00E8AB34 /* Montserrat-ExtraBold.ttf in Resources */,
+				6291CC402A603A8B00E8AB34 /* Montserrat-BlackItalic.ttf in Resources */,
+				6291CC392A603A8B00E8AB34 /* Montserrat-BoldItalic.ttf in Resources */,
+				6291CC462A603A8B00E8AB34 /* Montserrat-Italic.ttf in Resources */,
+				6291CC482A603A8B00E8AB34 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				6291CC372A603A8B00E8AB34 /* Montserrat-LightItalic.ttf in Resources */,
+				6291CC422A603A8B00E8AB34 /* Montserrat-ExtraLightItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6291CC4B2A60510A00E8AB34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6291CC5B2A605CA200E8AB34 /* NewsJsonMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +549,7 @@
 				6291CC112A5EE5A300E8AB34 /* UIButton + ext.swift in Sources */,
 				6291CBEC2A5D933E00E8AB34 /* NewsData.swift in Sources */,
 				6291CBFC2A5E5BAB00E8AB34 /* FavoritesController.swift in Sources */,
+				6291CC202A603A1800E8AB34 /* Article + ext.swift in Sources */,
 				6291CBAB2A5D4E8300E8AB34 /* SceneDelegate.swift in Sources */,
 				6291CC162A5F183200E8AB34 /* GradientImageView.swift in Sources */,
 				6291CBDB2A5D867F00E8AB34 /* URLComponents + ext.swift in Sources */,
@@ -385,6 +559,7 @@
 				6291CBCF2A5D577200E8AB34 /* NewsInteractor.swift in Sources */,
 				6291CC0B2A5E661E00E8AB34 /* ArticleDetailsInteractor.swift in Sources */,
 				6291CC092A5E65DE00E8AB34 /* ArticleDetailsPresenter.swift in Sources */,
+				6291CC362A603A8B00E8AB34 /* Font.swift in Sources */,
 				6291CC142A5F17E700E8AB34 /* CategoryView.swift in Sources */,
 				6291CBF22A5DB71000E8AB34 /* NewsRouter.swift in Sources */,
 				6291CBEF2A5DB13300E8AB34 /* ArticleCell.swift in Sources */,
@@ -392,19 +567,40 @@
 				6291CBD92A5D866100E8AB34 /* URL + ext.swift in Sources */,
 				6291CBD62A5D84EE00E8AB34 /* APIEndpoint.swift in Sources */,
 				6291CBD32A5D836300E8AB34 /* PrivateKey.swift in Sources */,
+				6291CC1C2A5FDAB500E8AB34 /* CoreDataManager.swift in Sources */,
 				6291CBE52A5D91C200E8AB34 /* DataCoder.swift in Sources */,
-				6291CBF42A5DB72500E8AB34 /* FavoritesRouter.swift in Sources */,
 				6291CBCB2A5D56E100E8AB34 /* NewsViewController.swift in Sources */,
 				6291CBDD2A5D877600E8AB34 /* NetworkManager.swift in Sources */,
 				6291CBF72A5DB95E00E8AB34 /* Article.swift in Sources */,
 				6291CBC72A5D559500E8AB34 /* Router.swift in Sources */,
+				6291CC1E2A5FDAE400E8AB34 /* CoreDataError.swift in Sources */,
 				6291CBFE2A5E5BCD00E8AB34 /* FavoritesPresenter.swift in Sources */,
 				6291CBE72A5D91E000E8AB34 /* DataCoderError.swift in Sources */,
+				6291CC192A5FD95500E8AB34 /* News.xcdatamodeld in Sources */,
 				6291CBC22A5D522800E8AB34 /* ModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6291CC492A60510A00E8AB34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6291CC5D2A605CE500E8AB34 /* GetJSONMock.swift in Sources */,
+				6291CC572A60511C00E8AB34 /* NetworkManagerMock.swift in Sources */,
+				6291CC592A60589400E8AB34 /* CoreDataManagerMock.swift in Sources */,
+				6291CC502A60510A00E8AB34 /* NewsServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6291CC522A60510A00E8AB34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6291CBA42A5D4E8300E8AB34 /* Discover */;
+			targetProxy = 6291CC512A60510A00E8AB34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6291CBB32A5D4E8400E8AB34 /* LaunchScreen.storyboard */ = {
@@ -586,6 +782,42 @@
 			};
 			name = Release;
 		};
+		6291CC542A60510A00E8AB34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J846X7UY52;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhiltsov.DiscoverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Discover.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Discover";
+			};
+			name = Debug;
+		};
+		6291CC552A60510A00E8AB34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J846X7UY52;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhiltsov.DiscoverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Discover.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Discover";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -607,7 +839,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6291CC532A60510A00E8AB34 /* Build configuration list for PBXNativeTarget "DiscoverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6291CC542A60510A00E8AB34 /* Debug */,
+				6291CC552A60510A00E8AB34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6291CC172A5FD95500E8AB34 /* News.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6291CC182A5FD95500E8AB34 /* News.xcdatamodel */,
+			);
+			currentVersion = 6291CC182A5FD95500E8AB34 /* News.xcdatamodel */;
+			path = News.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6291CB9D2A5D4E8200E8AB34 /* Project object */;
 }
